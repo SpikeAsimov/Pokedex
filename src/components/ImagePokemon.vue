@@ -21,9 +21,15 @@
     }
 
     img {
-        border-radius: 20%;
-        border: 5px hsl(41, 90%, 10%) solid;;
+        border-radius: 15%;
+        border: 10px hsl(41, 90%, 10%) solid;;
         width: 80%;
+        padding: 10px;
+        background: hsl(353, 90%, 90%);
+    }
+
+    img:hover {
+        width: 85%;
     }
 
 </style>
