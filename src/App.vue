@@ -11,7 +11,7 @@
               <Description :pokemon="pokemon"/>
           </div>
           <div class="picture">
-              <ImagePokemon :img-url="pokemon.sprites.front_shiny"/>
+              <ImagePokemon :imgUrl="pokemon.sprites.other.dream_world.front_default"/>
           </div>
         </section>
       </div>
@@ -40,9 +40,15 @@ export default {
     }
   },
   created() {
-    console.log("Created...")
+    function numeroAleatorio(a, b) {
+      return Math.round(Math.random()*(b-a)+parseInt(a));
+    }
+    var aleatorio = numeroAleatorio(1, 150);
 
-    fetch("https://pokeapi.co/api/v2/pokemon/6/")
+
+    console.log("Created..." + aleatorio)
+
+    fetch("https://pokeapi.co/api/v2/pokemon/"+aleatorio)
     .then(response => response.json())
     .then(data => (this.pokemon = data))
     .catch(error => console.error(error));
@@ -54,7 +60,7 @@ export default {
 <style scoped>
 
   .content {
-    width: 60%;
+    width: 70%;
     border: 5px hsl(353, 91%, 12%) solid;
     border-radius: 16px;
     padding: 18px;
