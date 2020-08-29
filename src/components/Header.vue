@@ -28,7 +28,7 @@
         min-width: 175px;
         justify-content: right;
         color: cornsilk;
-        font-size: small;
+        font-size: large;
         font-style: oblique;
     }
 
@@ -36,7 +36,8 @@
         flex: 2;
         min-width: 80px;
         color: cornsilk;
-        font-size: large;
+        font-size: x-large;
+        font-weight: bold;
         font-family: "Roboto", sans-serif;
 
     }
