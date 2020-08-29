@@ -63,20 +63,19 @@
         margin-bottom: 8px;
     }
 
-    .movements:hover {
-        font-size: 25px;
-    }
 
     .title > h1 {
         padding: 0;
         margin: 0;
         font-size: 30px;
+        text-transform: capitalize;
     }
 
     .type {
         font-size: 22px;
         font-weight: normal;
         font-style: italic;
+        text-transform: capitalize;
     }
 
     .container {
