@@ -3,6 +3,18 @@
 
     <Header/>
 
+    <setion class="wrapper">
+      <div class="content">
+        <div class="searchbar">
+          <form>
+            <input  type="text">
+            <i class="fa fa-search"></i>
+          </form>
+        </div>
+      </div>
+
+    </setion>
+
 
     <section class="wrapper">
       <div class="content">
@@ -127,6 +139,31 @@ export default {
     min-width: 100vw;
     min-height: 100vh;
     background: hsl(353, 90%, 90%);
+  }
+
+  .searchbar {
+    position: relative;
+    width: 100%;
+    max-width: 810px;
+    padding-bottom: 20px;
+  }
+
+  .searchbar input {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 40px 10px 10px;
+    width: calc(100% - 50px);
+    font-size: 2rem;
+    box-shadow:0 10px 20px rgba(0, 0, 0, 0.5), 0 20px 5px rgba(0, 0, 0, 0.2);
+  }
+  .searchbar i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.25rem;
+    color: #0A2E50;
+    cursor: pointer;
   }
 
 </style>
