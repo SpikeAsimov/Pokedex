@@ -6,12 +6,33 @@
 
     <section class="wrapper">
       <div class="content">
+        <div class="title">
+            <h1>Primera Generación</h1>
+        </div>
         <section class="description-container">
           <div class="description">
               <Description :pokemon="pokemon"/>
           </div>
           <div class="picture">
               <ImagePokemon :imgUrl="pokemon.sprites.other.dream_world.front_default"/>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="wrapper">
+      <div class="content">
+        <div class="title">
+          <h1>Segunda Generación</h1>
+        </div>
+        <section class="description-container">
+          <div class="description">
+            <Description :pokemon="pokemon2"/>
+          </div>
+          <div class="picture">
+            <ImagePokemon :imgUrl="pokemon2.sprites.other.dream_world.front_default"/>
           </div>
         </section>
       </div>
@@ -36,22 +57,33 @@ export default {
   },
   data: () => {
     return {
-      pokemon: {}
+      pokemon: {},
+      pokemon2: {}
     }
   },
   created() {
     function numeroAleatorio(a, b) {
       return Math.round(Math.random()*(b-a)+parseInt(a));
     }
-    var aleatorio = numeroAleatorio(1, 150);
+    var primeraGeneracion = numeroAleatorio(1, 150);
 
 
-    console.log("Created..." + aleatorio)
+    console.log("Created... -  ID Pokemon: " + primeraGeneracion);
 
-    fetch("https://pokeapi.co/api/v2/pokemon/"+aleatorio)
+    fetch("https://pokeapi.co/api/v2/pokemon/"+ primeraGeneracion)
     .then(response => response.json())
     .then(data => (this.pokemon = data))
     .catch(error => console.error(error));
+
+
+    var segGeneracion = numeroAleatorio(151, 300);
+
+    console.log("Created... -  ID Pokemon: " + segGeneracion);
+
+    fetch("https://pokeapi.co/api/v2/pokemon/"+ segGeneracion)
+            .then(response => response.json())
+            .then(data => (this.pokemon2 = data))
+            .catch(error => console.error(error));
 
   }
 }
