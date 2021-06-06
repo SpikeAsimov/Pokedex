@@ -87,6 +87,7 @@
         justify-content: center;
         align-items: flex-start;
         position: fixed;
+        z-index:2000;
         top: 0;
         left: 0;
         padding: 90px 10px 10px;
