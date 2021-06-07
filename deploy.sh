@@ -14,7 +14,7 @@ cd dist
 
 git init
 git add -A
-git commit -m 'haciendo deploy en gh-pages..'
+git commit -m 'haciendo deploy en prod..'
 
 # if you are deploying to https://<USERNAME>.github.io
 #git push -f git@github.com:spikeasimov/spikeasimov.github.io.git prod
