@@ -16,6 +16,6 @@ inputs:
 
 runs:
   using: 'docker'
-  imagen: 'Dockerfile'
+  image: 'Dockerfile'
   env:
       INPUT_NUMBER_OF_REQUESTS: ${{ inputs.number-of-requests }}
