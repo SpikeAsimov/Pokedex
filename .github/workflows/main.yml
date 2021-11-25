@@ -13,14 +13,21 @@ jobs:
       with: 
             persist-credentials: false
 
-    - name: Install and Build
+    - name: Instalacion y Build
       run: |
         npm install
         npm run build
     
-    - name: Deploy
+    - name: Deploy en Github Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
+
+    - name: Pruebas de acceso al sitio
+      uses: ./load-test-action
+      with:
+        url: https://arroyowal.github.io/Pokedex/
+        number-of-requests: 10
+        concurrency: 2
