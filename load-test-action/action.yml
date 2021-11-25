@@ -1,0 +1,21 @@
+name: Action Apache Bench
+description: Ejecuta Pruebas de Carga usando Apache Bench
+
+inputs:
+  url:
+    description: 'https://arroyowal.github.io/Pokedex/'
+    required: true
+  number-of-requests:
+    description: '100'
+    required: false
+    default: '1000'
+  concurrency:
+    description: '20'
+    required: false
+    default: '10'
+
+runs:
+  using: 'docker'
+  imagen: 'Dockerfile'
+  env:
+      INPUT_NUMBER_OF_REQUESTS: ${{ inputs.number-of-requests }}
