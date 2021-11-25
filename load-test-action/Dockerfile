@@ -1,4 +1,5 @@
-FROM alpine:latest
+FROM debian:10.3-slim
+LABEL maintainer="Arroyo Walter"
 
 RUN apk add --no-cache apache2-utils
 
