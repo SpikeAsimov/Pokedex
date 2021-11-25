@@ -1,4 +1,6 @@
 FROM alpine:latest
+LABEL maintainer="Arroyo Walter"
+
 
 RUN apk add --no-cache apache2-utils
 
