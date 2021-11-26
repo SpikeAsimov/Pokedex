@@ -16,18 +16,18 @@ jobs:
   job2:
       name: Job 2
       needs: job1
-        steps:
-        - name: Instalacion y Build
-          run: |
-            npm install
-            npm run build
+      steps:
+      - name: Instalacion y Build
+        run: |
+          npm install
+          npm run build
 
-        - name: Deploy en Github Pages
-          uses: JamesIves/github-pages-deploy-action@3.7.1
-          with:
-              ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-              BRANCH: gh-pages
-              FOLDER: dist
+      - name: Deploy en Github Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: dist
 
   job3:
       name: Job 3
