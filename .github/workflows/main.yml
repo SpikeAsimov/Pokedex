@@ -31,12 +31,12 @@ jobs:
 
   job3:
       name: Job 3
-        needs: [job1, job2]
-        steps:
-          - name: Pruebas de acceso al sitio
-            uses: ./load-test-action
-            with:
-                url: https://spikeasimov.github.io/Pokedex/
-                number-of-requests: 10
-                concurrency: 2
+      needs: [job1, job2]
+      steps:
+        - name: Pruebas de acceso al sitio
+          uses: ./load-test-action
+          with:
+              url: https://spikeasimov.github.io/Pokedex/
+              number-of-requests: 10
+              concurrency: 2
 
