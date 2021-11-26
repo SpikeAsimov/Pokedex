@@ -2,7 +2,7 @@
     <nav id="navbar" class="menu-fixed">
         <section class="container">
             <div class="item title">
-                <a href="#" class="hvr-grow">Pokedex</a>
+                <a href="#" class="hvr-grow" name="title">Pokedex</a>
             </div>
             <div class="item description">
                 <p>
