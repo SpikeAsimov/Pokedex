@@ -30,9 +30,9 @@ jobs:
             BRANCH: gh-pages
             FOLDER: dist
 
-  job4:
-      name: Job 4
-      needs: job3
+  job3:
+      name: Job 3
+      needs: job2
 
       steps:
         - name: Pruebas de acceso al sitio
