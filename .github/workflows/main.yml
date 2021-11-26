@@ -28,4 +28,8 @@ jobs:
 
     - name: Pruebas de acceso al sitio
       uses: ./load-test-action
+        with:
+          url: https://spikeasimov.github.io/Pokedex/
+          number-of-requests: 10
+          concurrency: 2
 
