@@ -14,21 +14,30 @@ jobs:
       with: 
             persist-credentials: false
 
-    - name: Instalacion y Build
-      run: |
-        npm install
-        npm run build
-
-    - name: Deploy en Github Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
-
   job2:
-      name: Job 2
-      needs: job1
+      name: Job 2     
+
+      steps:
+        - name: Instalacion y Build
+        run: |
+          npm install
+          npm run build
+
+  job3:
+        name: Job 3       
+
+        steps:            
+          - name: Deploy en Github Pages
+            uses: JamesIves/github-pages-deploy-action@3.7.1
+            with:
+                ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+                BRANCH: gh-pages
+                FOLDER: dist
+
+
+  job4:
+      name: Job 4
+      needs: [job1, job2, job3]
       runs-on: ubuntu-latest
       steps:
         - name: Pruebas de acceso al sitio
