@@ -15,7 +15,6 @@ jobs:
             persist-credentials: false
   job2:
       name: Job 2
-      needs: job1
 
       steps:
       - name: Instalacion y Build
@@ -32,7 +31,6 @@ jobs:
 
   job3:
       name: Job 3
-      needs: job2
 
       steps:
         - name: Pruebas de acceso al sitio
