@@ -1,42 +1,35 @@
-name: Build - Deploy - Test
+
+name: Build and Deploy Pokedex
 on:
   push:
     branches: [master]
 
 jobs:
-  job1:
-    name: Job 1    
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest    
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2.3.1
       with: 
             persist-credentials: false
-  job2:
-      name: Job 2      
-      needs: job1
-      runs-on: ubuntu-latest
-      steps:
-      - name: Instalacion y Build
-        run: |
-          npm install
-          npm run build
-      - name: Deploy en Github Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-            BRANCH: gh-pages
-            FOLDER: dist
 
-  job3:
-      name: Job 3
-      needs: [job1, job2]
-      runs-on: ubuntu-latest
-      steps:
-        - name: Pruebas de acceso al sitio
-          uses: ./load-test-action
-          with:
-              url: https://spikeasimov.github.io/Pokedex/
-              number-of-requests: 10
-              concurrency: 2
+    - name: Instalacion y Build
+      run: |
+        npm install
+        npm run build
+        
+    
+    - name: Deploy en Github Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+
+    - name: Pruebas de acceso al sitio
+      uses: ./load-test-action
+      with:
+          url: https://spikeasimov.github.io/Pokedex/
+          number-of-requests: 10
+          concurrency: 2
