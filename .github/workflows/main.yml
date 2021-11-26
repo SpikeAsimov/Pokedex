@@ -16,6 +16,7 @@ jobs:
   job2:
       name: Job 2      
       needs: job1
+      runs-on: ubuntu-latest
       steps:
       - name: Instalacion y Build
         run: |
